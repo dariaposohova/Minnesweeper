@@ -2,8 +2,8 @@ import pygame
 from random import randint as rnd
 from random import random as rnd_
 
-ROWS = 15
-COLS = 15
+ROWS = 13
+COLS = 20
 CELLW = 50
 CELLH = 50
 WINDOW_W, WINDOW_H = COLS * CELLW, ROWS * CELLH
@@ -214,12 +214,12 @@ class Game:
 
             if self.crow == self.frow and self.ccol == self.fcol:
                 self.board.showall()
-                self.message("Ви вижили! ENTER щоб спробувати заново!", (140, 79, 7))
+                self.message("Ви вижили! ENTER щоб спробувати заново!", (255,255,255))
                 self.state = Game.SSUCCESS
 
             if self.map[self.crow][self.ccol] == Game.BOMB:
                 self.board.showall()
-                self.message("Ви програли! ENTER щоб спробувати заново!", (140, 79, 7))
+                self.message("Ви програли! ENTER щоб спробувати заново!", (255,255,255))
                 self.state = Game.SFAIL
 
             if self.ocol != self.ccol or self.orow != self.crow:
